@@ -1,31 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Header from './component/Header/Header'
-import Footer from './component/Footer/Footer'
-import Home from './component/Home/Home'
+import { RouterProvider } from 'react-router-dom'
+import { appRouter } from './AppRouter'
+import Header from './page/Header/Header'
+import Footer from './page/Footer/Footer'
 import style from './App.module.css'
 import './App.css'
-import Main from './component/Main/Main'
 
 function App() {
-
   return (
     <>
-      <BrowserRouter>
-        <div className={style.content}>
-          <div className={style.header}>
-            <Header />
-          </div>
-          <div className={style.main}>
-            <Routes>
-              <Route path="/use-effect-hook" element={<Home />} />
-              <Route path="/" element={<Main />} />
-            </Routes>
-          </div>
-          <div className={style.footer} >
-            <Footer />
-          </div>
+      <div className={style.content}>
+        <div className={style.header}>
+          <Header />
         </div>
-      </BrowserRouter>
+        <div className={style.main}>
+          <RouterProvider router={appRouter} />
+        </div>
+        <div className={style.footer}>
+          <Footer />
+        </div>
+      </div>
     </>
   )
 }
