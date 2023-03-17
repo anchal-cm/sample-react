@@ -7,7 +7,7 @@ export const appRouter = createBrowserRouter(
     <Route path='/'>
       <Route index element={<ProductsPage />} />
       <Route path='products'>
-        <Route path=':productid' element={<ProductPage />}></Route>
+        <Route path=':productId' element={<ProductPage />}></Route>
       </Route>
     </Route>,
   ),

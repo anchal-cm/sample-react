@@ -1,27 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useQuery } from '../../useQuery'
 
 type Product = {
   id: number
   title: string
 }
 
-export function useProducts() {
-  const [products, setProducts] = useState<Product[]>()
-  const [loading, setLoading] = useState(true)
+type ProductResponse = {
+  products: Product[]
+}
 
-  useEffect(() => {
-    fetch('https://dummyjson.com/products')
-      .then((res) => res.json())
-      .then((result) => {
-        return result
-      })
-      .then((data) => {
-        setProducts(data.products), setLoading(false)
-      })
-  }, [])
+export function useProducts() {
+  const res = useQuery<ProductResponse>('https://dummyjson.com/products')
+  const products: Product[] = res.products
 
   return {
     products,
-    loading,
   }
 }
