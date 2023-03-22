@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "jest": true
+        "jest": true,
+        "node":true
     },
     "extends": [
         "eslint:recommended",
@@ -21,9 +22,7 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "camelcase": "error",
-        "spaced-comment": "error",
-        "quotes": ["error", "single"],
-        "no-duplicate-imports": "error"
+        "spaced-comment": "error"
     },
     "settings": {
         "import/resolver": {

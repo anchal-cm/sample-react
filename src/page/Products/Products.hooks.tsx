@@ -1,19 +1,12 @@
-import { useQuery } from '../../useQuery'
-
-type Product = {
-  id: number
-  title: string
-}
-
-type ProductResponse = {
-  products: Product[]
-}
+import { useQuery } from '@tanstack/react-query'
+import { ProductsUsecase } from '../../features/usecase/ProductsUsecase'
 
 export function useProducts() {
-  const res = useQuery<ProductResponse>('https://dummyjson.com/products')
-  const products: Product[] = res.products
-
+  const { data } = useQuery({
+    queryKey: ['ProductsUsecase', 'fetchProducts'],
+    queryFn: ProductsUsecase.fetchProducts,
+  })
   return {
-    products,
+    products: data?.products ?? [],
   }
 }
