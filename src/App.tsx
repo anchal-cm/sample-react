@@ -3,6 +3,7 @@ import { appRouter } from './AppRouter'
 import './App.css'
 import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { RecoilRoot } from 'recoil'
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { suspense: true } },
@@ -10,11 +11,13 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <RouterProvider router={appRouter} />
-      </React.Suspense>
-    </QueryClientProvider>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <RouterProvider router={appRouter} />
+        </React.Suspense>
+      </QueryClientProvider>
+    </RecoilRoot>
   )
 }
 

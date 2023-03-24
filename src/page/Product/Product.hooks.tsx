@@ -1,5 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { useSetRecoilState } from 'recoil'
+import { sideNaviState } from '../../features/side-navi-atom'
 import { ProductUsecase } from '../../features/usecase/ProductUsecase'
 
 type ProductParam = { productId: string }
@@ -11,8 +14,12 @@ export function useProduct() {
     queryFn: () => ProductUsecase.fetchProductBy(productId as string),
   })
 
-  const product = data
+  const setSideNavi = useSetRecoilState(sideNaviState)
+  useEffect(() => {
+    setSideNavi('PRODUCT')
+  }, [setSideNavi])
+
   return {
-    product,
+    product: data,
   }
 }

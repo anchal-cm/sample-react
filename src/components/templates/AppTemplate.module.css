@@ -10,7 +10,7 @@
 
 .main {
   flex: 1;
-  /* padding: 2%; */
+  background: #ffffee;
 }
 
 .footer {
