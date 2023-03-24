@@ -13,7 +13,7 @@ function App() {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<div>Global Loading...</div>}>
           <RouterProvider router={appRouter} />
         </React.Suspense>
       </QueryClientProvider>

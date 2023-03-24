@@ -3,18 +3,23 @@
   flex-direction: column;
   min-height: 100vh;
 }
-
+/* 
 .header {
-  background-color: yellow;
-}
+  background-color: Red;
+  color: white;
+} */
 
 .main {
   flex: 1;
-  background: #ffffee;
+  display: flex;
+  align-items: inherit;
+  /* background: #ffffee; */
 }
 
 .footer {
   background: blue;
+  color: white;
+  padding: 1%;
   flex-grow: 0;
   flex-shrink: 0;
 }

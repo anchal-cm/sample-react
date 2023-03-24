@@ -1,8 +1,4 @@
-import style from './Products.module.css'
 import React from 'react'
-import Header from '../../components/Header/Header'
-import AppTemplate from '../../components/templates/AppTemplate'
-import { Product } from '../../features/entity/Product'
 import { useProducts } from './Products.hooks'
 
 const ProductsPage: React.FC = () => {
@@ -14,6 +10,7 @@ const ProductsPage: React.FC = () => {
 
   return (
     <ul>
+      <a href='/products/newProduct'>New Product</a>
       {products?.map((product: { id: number; title: string }) => (
         <a href={`/products/${product.id}`} key={product.id}>
           <li>

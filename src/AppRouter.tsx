@@ -3,6 +3,7 @@ import ProductsPage from './page/Products/ProductsPage'
 import ProductPage from './page/Product/ProductPage'
 import { UsersPage } from './page/UsersPage/UsersPage'
 import { AppLayout } from './components/layouts/AppLayout'
+import { NewProductPAge } from './page/NewProduct/NewProductPage'
 
 export const appRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,7 @@ export const appRouter = createBrowserRouter(
       </Route>
       <Route path='products'>
         <Route index element={<ProductsPage />} />
+        <Route path='newProduct' element={<NewProductPAge />} />
         <Route path=':productId' element={<ProductPage />}></Route>
       </Route>
     </Route>,
