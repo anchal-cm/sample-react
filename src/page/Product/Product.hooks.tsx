@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSetRecoilState } from 'recoil'
-import { sideNaviState } from '../../features/side-navi-atom'
+import { sideNaviState } from '../../features/atoms/side-navi-atom'
 import { ProductUsecase } from '../../features/usecase/ProductUsecase'
 
 type ProductParam = { productId: string }

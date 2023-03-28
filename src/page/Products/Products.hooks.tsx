@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { ProductsUsecase } from '../../features/usecase/ProductsUsecase'
 import { useSetRecoilState } from 'recoil'
-import { sideNaviState } from '../../features/side-navi-atom'
+import { sideNaviState } from '../../features/atoms/side-navi-atom'
 import { useEffect } from 'react'
 
 export function useProducts() {

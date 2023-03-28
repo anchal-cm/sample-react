@@ -5,7 +5,7 @@ import AppTemplate from '../templates/AppTemplate'
 import style from './AppLayout.module.css'
 import React from 'react'
 import { useRecoilValue } from 'recoil'
-import { sideNaviState } from '../../features/side-navi-atom'
+import { sideNaviState } from '../../features/atoms/side-navi-atom'
 
 export const AppLayout: FC = () => {
   const sideNavi = useRecoilValue(sideNaviState)
