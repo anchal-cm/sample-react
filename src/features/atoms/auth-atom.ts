@@ -10,10 +10,14 @@ type LoginState =  {
     user:User
 }
 
+type LoadingState = {
+    type: "Loading"
+}
 
-export const authState = atom<NotLoginState | LoginState>({
+
+export const authState = atom<NotLoginState | LoginState | LoadingState>({
     key:"authState",
     default: {
-        type:"not-login"
+        type:"Loading"
     }
 })

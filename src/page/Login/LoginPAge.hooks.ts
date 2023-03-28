@@ -3,7 +3,7 @@ import { AuthUsecase } from "../../features/usecase/AuthUsecase"
 
 export const useLoginPage = () => {
   const onClickLogin = useCallback(() => {
-    AuthUsecase.loginWithGoogle();
+    AuthUsecase.login();
  
     console.log("login click")
   },[])

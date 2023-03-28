@@ -1,0 +1,5 @@
+.root {
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 10px;
+}

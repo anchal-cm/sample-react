@@ -1,5 +1,8 @@
 import React from 'react'
+import { GridColumn } from '../../components/views/GridColumn/GridColumn'
+import { StackHorizontal } from '../../components/views/StackHorizontal/StackHorizonta'
 import { useProducts } from './Products.hooks'
+import style from './Products.module.css'
 
 const ProductsPage: React.FC = () => {
   const { products } = useProducts()
@@ -9,16 +12,14 @@ const ProductsPage: React.FC = () => {
   }
 
   return (
-    <ul>
+    <StackHorizontal className={style.container}>
       <a href='/products/newProduct'>New Product</a>
       {products?.map((product: { id: number; title: string }) => (
         <a href={`/products/${product.id}`} key={product.id}>
-          <li>
-            {product.id} {product.title}
-          </li>
+          {product.id} {product.title}
         </a>
       ))}
-    </ul>
+    </StackHorizontal>
   )
 }
 
