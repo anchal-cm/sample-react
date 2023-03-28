@@ -11,3 +11,7 @@
 .container {
   width: inherit;
 }
+
+.container img {
+  width: 200px;
+}
