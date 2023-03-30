@@ -22,6 +22,10 @@ export class AuthRepository {
     }
    return firebaseUserToAppUser(user)
   }
+
+  static logout() {
+    auth.signOut()
+  }
   
    
 }

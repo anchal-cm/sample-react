@@ -10,4 +10,8 @@ export class AuthUsecase {
   static currentUser() {
     return AuthRepository.currentUser()
   }
+
+  static logout() {
+    return AuthRepository.logout()
+  }
 }
