@@ -6,7 +6,7 @@ export class ProductRepository {
     }
 
     static  async postProduct(product:{title:string,description:string}) {
-        const res = await fetch('https://dummyjson.com/products/add', {
+        const res = await fetch('api/products/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(product)

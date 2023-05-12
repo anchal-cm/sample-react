@@ -4,9 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^12.9.0"
+    "cypress": "^12.9.0",
+    "firebase": "^9.19.0",
+    "firebase-admin": "^11.5.0"
   },
   "devDependencies": {
+    "cypress-firebase": "2.2.5",
     "typescript": "^5.0.2"
   }
 }
