@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useNewProductPage } from './NewProduct.hooks'
+import { Input } from '../../components/Input/Input'
 
 export const NewProductPAge: FC = () => {
   const { form, onClickSubmit, updateForm, error, loading } = useNewProductPage()
@@ -11,13 +12,11 @@ export const NewProductPAge: FC = () => {
       <form onSubmit={onClickSubmit}>
         <div>
           <label htmlFor='input-title'>Title</label>
-          <input
-            id='input-title'
-            type='text'
+          <Input
+            label='name'
             value={form.title}
-            onChange={(e) => {
-              updateForm({ title: e.target.value })
-            }}
+            type='text'
+            onChange={(e) => updateForm({ title: e })}
           />
         </div>
         <div>
